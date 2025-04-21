@@ -1,6 +1,32 @@
 .container {
-    padding: 40px;
-    text-align: center;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .infoBox {
+    background-color: #f5f5f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    font-size: 16px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .logout {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333;
+  }
+  .logout:hover {
+    background-color: #ccc;
   }
   

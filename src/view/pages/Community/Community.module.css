@@ -1,6 +1,38 @@
 .container {
-    padding: 40px;
-    text-align: center;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .newPost textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .newPost button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #5a55ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .post {
+    background-color: #f5f5f7;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   }
   
