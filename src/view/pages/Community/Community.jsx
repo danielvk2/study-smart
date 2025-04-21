@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Community = () => {
   const [posts, setPosts] = useState([
-    { id: 1, author: "נועה ל.", content: "מישהו יכול להמליץ על סיכומים בפסיכולוגיה?" },
+    { id: 1, author: "מאי ש.", content: "מישהו יכול להמליץ על סיכומים בפסיכולוגיה?" },
     { id: 2, author: "דניאל ו.", content: "העליתי סיכום חדש בקורס מבוא לתקשורת 📄" },
     { id: 3, author: "אייל מ.", content: "בהצלחה לכולם במבחן מחר!" },
   ]);
