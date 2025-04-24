@@ -31,16 +31,6 @@
   text-decoration: none;
   color: #333;
   font-size: 16px;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: #5a55ea;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
   transition: 0.2s;
   display: block;
   padding: 10px;
@@ -50,4 +40,26 @@
 .nav-links a:hover {
   color: #5a55ea;
   background-color: #eee6ff;   
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 10px 5px;
+  }
+
+  .logo {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
 }
