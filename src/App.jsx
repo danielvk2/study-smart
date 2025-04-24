@@ -8,6 +8,7 @@ import Community from "./view/pages/Community/Community";
 import Courses from "./view/pages/Courses/Courses";
 import Settings from "./view/pages/Settings/Settings";
 import Help from "./view/pages/Help/Help";
+
 import "./App.css";
 
 const App = () => {
