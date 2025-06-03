@@ -1,45 +1,92 @@
+import { useState, useEffect, useRef } from "react";
+import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../firebase-config";
+import CommentItem from "./CommentItem";
 import styles from "./Community.module.css";
-import { useState } from "react";
 
 const Community = () => {
-  const [posts, setPosts] = useState([
-    { id: 1, author: "מאי ש.", content: "מישהו יכול להמליץ על סיכומים בפסיכולוגיה?" },
-    { id: 2, author: "דניאל ו.", content: "העליתי סיכום חדש בקורס מבוא לתקשורת 📄" },
-    { id: 3, author: "אייל מ.", content: "בהצלחה לכולם במבחן מחר!" },
-  ]);
+  const [message, setMessage] = useState("");
+  const [comments, setComments] = useState([]);
+  const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const loggedRef = useRef(false);
 
-  const [newPost, setNewPost] = useState("");
+  const commentsRef = collection(db, "communityPosts");
 
-  const handlePost = () => {
-    if (newPost.trim() === "") return;
-    const post = {
-      id: Date.now(),
-      author: "אתה",
-      content: newPost,
-    };
-    setPosts([post, ...posts]);
-    setNewPost("");
+  useEffect(() => {
+    fetchComments();
+
+    if (!loggedRef.current) {
+      logPageVisit();
+      loggedRef.current = true;
+    }
+  }, []);
+
+  const fetchComments = () => {
+    const q = query(commentsRef, orderBy("createdAt", "desc"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setComments(data);
+    });
+    return () => unsubscribe();
+  };
+
+  const logPageVisit = async () => {
+    if (!currentUser) return;
+
+    try {
+      await addDoc(collection(db, "site_usage"), {
+        userId: currentUser.uid,
+        userEmail: currentUser.email,
+        page: "Community",
+        timestamp: serverTimestamp(),
+      });
+      console.log("Entry added!");
+    } catch (err) {
+      console.error("Error logging activity:", err);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!message.trim()) return;
+
+    await addDoc(commentsRef, {
+      text: message,
+      userId: currentUser.uid,
+      userName:
+        currentUser.fullName ||
+        currentUser.displayName ||
+        currentUser.email,
+      createdAt: new Date(),
+      replies: [],
+    });
+
+    setMessage("");
   };
 
   return (
     <div className={styles.container}>
-      <h1>קהילה</h1>
+      <h2>קהילה</h2>
 
-      <div className={styles.newPost}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <textarea
-          value={newPost}
-          onChange={(e) => setNewPost(e.target.value)}
-          placeholder="כתוב פוסט חדש לקהילה..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="כתוב משהו לקהילה..."
         />
-        <button onClick={handlePost}>פרסם</button>
-      </div>
+        <button type="submit">פרסם</button>
+      </form>
 
-      <div className={styles.posts}>
-        {posts.map((post) => (
-          <div key={post.id} className={styles.post}>
-            <strong>{post.author}:</strong>
-            <p>{post.content}</p>
-          </div>
+      <div className={styles.comments}>
+        {comments.map((comment) => (
+          <CommentItem
+            key={comment.id}
+            comment={comment}
+            currentUser={currentUser}
+          />
         ))}
       </div>
     </div>

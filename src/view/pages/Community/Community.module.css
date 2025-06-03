@@ -1,38 +1,106 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .newPost textarea {
-    width: 100%;
-    min-height: 80px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  .newPost button {
-    margin-top: 10px;
-    padding: 10px 16px;
-    background-color: #5a55ea;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .posts {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .post {
-    background-color: #f5f5f7;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: right;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+textarea {
+  resize: vertical;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+  margin-bottom: 10px;
+}
+
+button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #5a55ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #443fc9;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.replySection {
+  margin-top: 15px;
+  padding-right: 10px;
+  border-right: 2px solid #ccc;
+}
+
+.reply {
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.replyButton {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #5a55ea;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.replyForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.replyForm textarea {
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  min-height: 60px;
+}
+
+.replyForm button {
+  background-color: #5a55ea;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.deleteButton {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 6px;
+}

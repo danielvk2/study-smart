@@ -1,0 +1,174 @@
+.adminUsersWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .adminUsersContent {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .searchInput {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .desktopTable {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .desktopTable th,
+  .desktopTable td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+    word-break: break-word;
+  }
+  
+  .desktopTable th {
+    background-color: #f0f0ff;
+  }
+  
+  .desktopTable td button {
+    padding: 6px 12px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .mobileCards {
+    display: none;
+  }
+  
+  .chartContainer {
+    width: 100%;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 0.05);
+    margin-bottom: 30px;
+    overflow-x: auto;
+  }
+  
+  /* סגנונות AdminHelpSection */
+  .helpAdminSection {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  
+  .helpAdminSection h2 {
+    margin-bottom: 25px;
+    color: #1d4ed8;
+  }
+  
+  .requestCard {
+    background: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+  }
+  
+  .requestCard p {
+    margin: 6px 0;
+    color: #333;
+  }
+  
+  .replyTextarea {
+    width: 100%;
+    min-height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    resize: vertical;
+  }
+  
+  .replyButton {
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+  
+  .replyButton:hover {
+    background-color: #1e40af;
+  }
+  
+  /* ✅ במובייל */
+  @media (max-width: 768px) {
+    .adminUsersWrapper {
+      padding: 0;
+    }
+  
+    .desktopTable {
+      display: none;
+    }
+  
+    .mobileCards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  
+    .card p {
+      margin: 6px 0;
+    }
+  
+    .card button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background: #ff4d4f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+  
+    .chartContainer {
+      padding: 0.5rem;
+    }
+  
+    canvas {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+  

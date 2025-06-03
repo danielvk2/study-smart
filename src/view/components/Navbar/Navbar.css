@@ -2,19 +2,103 @@
   width: 220px;
   height: 100vh;
   background-color: #f3f3f7;
-  padding: 20px;
+  padding: 0 20px;
   position: fixed;
   right: 0;
   top: 0;
   direction: rtl;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0;
+
+  overflow-y: auto; 
+  padding-bottom: 30px; 
 }
 
 .logo {
-  margin-bottom: 40px;
+  margin-bottom: -35px;
   font-size: 22px;
   font-weight: bold;
   color: #5a55ea;
   text-align: center;
+  line-height: 1;
+}
+
+.profile-pic-container {
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 8px;
+  transition: 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.profile-image-text {
+  font-size: 12px;
+  color: #444;
+  margin-top: 4px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: rgba(231, 76, 60, 0.85);
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.profile-pic-container:hover .remove-button {
+  opacity: 1;
+}
+
+.greeting {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* כפתור התנתקות */
+.logout-button {
+  background-color: #5a55ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 180px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #3f3ac6;
 }
 
 .nav-links {
@@ -34,32 +118,83 @@
   transition: 0.2s;
   display: block;
   padding: 10px;
-  border-radius: 12px;   
+  border-radius: 12px;
 }
 
 .nav-links a:hover {
   color: #5a55ea;
-  background-color: #eee6ff;   
+  background-color: #eee6ff;
 }
 
+.auth-links {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-links a {
+  color: #5a55ea;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+  color: #3f3ac6;
+}
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 70px;
+    width: 90px;
     padding: 10px 5px;
   }
 
   .logo {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
-  .nav-links a {
-    font-size: 12px;
-    padding: 8px;
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-image-text {
+    font-size: 10px;
+  }
+
+  .remove-button {
+    font-size: 8px;
+    padding: 2px 4px;
+    top: 2px;
+    left: 2px;
+  }
+
+  .greeting {
+    font-size: 11px;
+    margin: 6px 0 10px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    font-size: 11px;
+    padding: 6px 6px;
+    max-width: 64px;
+    width: 90%;
   }
 
   .nav-links li {
     margin-bottom: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    padding: 6px;
   }
 }

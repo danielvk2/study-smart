@@ -1,35 +1,184 @@
 .container {
-    display: flex;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  direction: rtl;
+  font-family: "Heebo", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.addSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.addSection input,
+.addSection textarea {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1 1 240px;
+  min-width: 240px;
+  box-sizing: border-box;
+}
+
+.addSection textarea {
+  resize: vertical;
+}
+
+.addSection button {
+  padding: 10px 16px;
+  background-color: #5a55ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 100px;
+}
+
+.addSection button:hover {
+  background-color: #3f3bb8;
+}
+
+/* סטטוסים */
+.filterButtons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filterButtons button {
+  margin: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filterButtons .active {
+  background-color: #5a55ea;
+  color: white;
+  border-color: #5a55ea;
+}
+
+/* רשימת משימות */
+.taskList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.taskItem {
+  background-color: #f9f9fb;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.taskItem strong {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.taskItem span {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.taskItem select {
+  margin-top: 6px;
+  padding: 2px 6px !important;
+  font-size: 12px !important;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: auto !important;
+  max-width: 120px;
+  height: auto;
+  line-height: 1.2;
+  align-self: flex-start;
+}
+
+.taskItem button {
+  margin-top: 8px;
+  margin-left: 6px;
+  background-color: #ff5e5e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.taskItem button:hover {
+  background-color: #d64747;
+}
+
+.taskItem button:nth-child(1) {
+  background-color: #f0ad4e;
+}
+.taskItem button:nth-child(1):hover {
+  background-color: #e0942c;
+}
+
+.taskItem button:last-child {
+  background-color: #5a55ea;
+}
+.taskItem button:last-child:hover {
+  background-color: #443fce;
+}
+
+/* פירוט */
+.descriptionBox {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f2ff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* מובייל */
+@media (max-width: 600px) {
+  .taskItem {
+    font-size: 15px;
+  }
+
+  .addSection {
     flex-direction: column;
-    gap: 20px;
+    align-items: stretch;
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .addSection input,
+  .addSection textarea,
+  .addSection button {
+    width: 100%;
   }
-  
-  .addButton {
-    padding: 10px 20px;
-    background-color: #5a55ea;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
+
+  .taskItem button {
+    width: 100%;
+    margin: 5px 0 0 0;
   }
-  
-  .taskList {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+  .taskItem select {
+    width: 100%;
   }
-  
-  .task {
-    padding: 15px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  
+}
