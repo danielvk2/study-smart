@@ -1,12 +1,44 @@
-# React + Vite
+# Study Smart ✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Study Smart** היא מערכת אינטרנטית לניהול חוויית הלמידה של סטודנטים. המערכת מאפשרת שמירה, ארגון, שיתוף וניהול של חומרים לימודיים, משימות, קהילה ודוחות פעילות — בצורה פשוטה ונוחה.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 תכונות עיקריות
 
-## Expanding the ESLint configuration
+* התחברות והרשמה מאובטחות
+* העלאת סיכומים ותיוגם לפי קורס
+* יצירת משימות עם סטטוסים (הושלמה / דחופה / ממתינה)
+* קהילת סטודנטים עם אפשרות לפרסום תגובות
+* מערכת דירוג סיכומים (⭐️)
+* עמוד אדמין לניהול פניות משתמשים, ניתוח פעילות ומחיקת תכנים
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔗 כתובת האתר (Production)
+
+[https://study-smart-1e97e.web.app](https://study-smart-1e97e.web.app)
+
+---
+
+## 👤 משתמש אדמין לדוגמה:
+
+* **שם משתמש:** `danielvkn21@gmail.com`
+* **סיסמה:** `112233`
+
+> ניתן להשתמש בפרטי התחברות אלו כדי להיכנס כמשתמש אדמין ולבחון את יכולות הניהול של המערכת.
+
+---
+
+## 🛠 טכנולוגיות:
+
+* **React** (Vite)
+* **Firebase Authentication**
+* **Firestore Database**
+* **Firebase Cloud Functions**
+* **Firebase Hosting + Storage**
+* **CSS מודולרי**
+
+---
+
+👨‍💻 פותח כחלק מפרויקט גמר בקורס Full Stack.
