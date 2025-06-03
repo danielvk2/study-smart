@@ -14,7 +14,7 @@ import Community from "./view/pages/Community/Community";
 import Summaries from "./view/pages/Summaries/Summaries";
 import Tasks from "./view/pages/Tasks/Tasks";
 import Navbar from "./view/components/Navbar/Navbar";
-import EditProfile from "./view/pages/EditProfile/EditProfile";
+
 
 import { useUser } from "./context/UserContext";
 
@@ -64,7 +64,6 @@ const App = () => {
               <Route path="/community" element={<Community />} />
               <Route path="/summaries" element={<Summaries />} />
               <Route path="/tasks" element={<Tasks />} />
-              <Route path="/edit-profile" element={<EditProfile setCurrentUser={setCurrentUser} />} />
               {currentUser.role === "admin" && (
                 <Route path="/admin" element={<Admin />} />
               )}
